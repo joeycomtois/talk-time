@@ -1,0 +1,20 @@
+PODS:
+  - mongo-embedded-c-driver (1.13.0-4.0.4)
+  - MongoSwift (0.0.9):
+    - mongo-embedded-c-driver (~> 1.13.0-4.0.0)
+
+DEPENDENCIES:
+  - MongoSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - mongo-embedded-c-driver
+    - MongoSwift
+
+SPEC CHECKSUMS:
+  mongo-embedded-c-driver: b46360baa15fc142baae80628822f26663220bde
+  MongoSwift: c7420b38a7e223439667f8c50aefada29c270df8
+
+PODFILE CHECKSUM: 12b0cfe25dbdb96f81ff66e8499cf38d26f34cba
+
+COCOAPODS: 1.6.1
