@@ -108,6 +108,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var homeConversations: UITableView!
     @IBOutlet weak var searchMessages: UIBarButtonItem!
     @IBOutlet weak var composeMessage: UIBarButtonItem!
+    @IBOutlet var defaultUserPhoto: UIView!
+    @IBOutlet var defaultUserLable: UILabel!
     
     
     
@@ -122,17 +124,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         conversation.userLastConvo.text = lastConvo[indexPath.row]
         conversation.convoDate.text = dates[indexPath.row]
         
-        if(photos[indexPath.row] == "none") {
-            let defaultPhoto = UIView()
-            defaultPhoto.frame.size = conversation.userPhoto.frame.size
-            defaultPhoto.layer.cornerRadius = defaultPhoto.frame.height / 2
-            defaultPhoto.backgroundColor = UIColor.red
-
-            conversation.userPhoto.image = image(with: defaultPhoto)
+        print(photos[indexPath.row])
+        
+        
+        //if(photos[indexPath.row] == "none") {
+//      //      let defaultPhoto = UIView()
+//      //      defaultPhoto.frame.size = conversation.userPhoto.frame.size
+//      //      defaultPhoto.layer.cornerRadius = defaultPhoto.frame.height / 2
+//      //      defaultPhoto.backgroundColor = UIColor.red
+        //
+        //
+        //    if conversation.userName.text != "" {
+        //        //defaultUserLable.text = people[indexPath.row].substring(to: 1)
+        //        //defaultUserLable.text = "G"
+        //
+        //
+        //    } else {
+        //        print("name")
+        //    }
+//
+        //    saveImage(imageName: "\(people[indexPath.row])", image: image(with: defaultUserPhoto)!)
+        //
+//
+        //    //conversation.userPhoto.image = UIImage(named: "\(people[indexPath.row])")
+        //}
+        
+        
+        if (photos[indexPath.row] == "none") {
+            var newProfile = image(with: defaultUserPhoto)
+            saveImage(imageName: people[indexPath.row], image: newProfile!)
+                conversation.userPhoto.image = UIImage(named: people[indexPath.row])
             
         } else {
+        print("working!")
         conversation.userPhoto.image = UIImage(named: photos[indexPath.row])
         }
+        
+        
         conversation.userName.textColor = global.accentColor
         conversation.userLastConvo.textColor = global.accentColor
         conversation.convoDate.textColor = global.accentColor
@@ -334,6 +362,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return e
         //return [(2,3)]
     }
+//    func saveImage(image: UIImage, name: String) -> Bool {
+//        guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
+//            return false
+//        }
+//        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+//            return false
+//        }
+//        do {
+//            try data.write(to: directory.appendingPathComponent(name)!)
+//            return true
+//        } catch {
+//            print(error.localizedDescription)
+//            return false
+//        }
+//    }
+
+    func saveImage(imageName: String, image: UIImage) {
+        
+        
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        let fileName = imageName
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        guard let data = image.jpegData(compressionQuality: 1) else { return }
+        
+        //Checks if file exists, removes it if so.
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: fileURL.path)
+                print("Removed old image")
+            } catch let removeError {
+                print("couldn't remove file at path", removeError)
+            }
+            
+        }
+        
+        do {
+            try data.write(to: fileURL)
+        } catch let error {
+            print("error saving file with error", error)
+        }
+        
+    }
+
     
     func image(with view: UIView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)

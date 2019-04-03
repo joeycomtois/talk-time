@@ -17,12 +17,9 @@
 		34B250CC2241E18300F29004 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B250CB2241E18300F29004 /* SetupViewController.swift */; };
 		34CEC5CD223F5EA100739456 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CEC5CC223F5EA100739456 /* ConversationTableViewCell.swift */; };
 		34CEC5CF223F5F7F00739456 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CEC5CE223F5F7F00739456 /* MessagesViewController.swift */; };
-		6655D0F08812FE2C1E12DFA1 /* Pods_Talk_Time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3267AF9813EABC132F80BA23 /* Pods_Talk_Time.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3267AF9813EABC132F80BA23 /* Pods_Talk_Time.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talk_Time.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		343A64F2A8B99882B7A5FA03 /* Pods-Talk Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk Time.debug.xcconfig"; path = "Target Support Files/Pods-Talk Time/Pods-Talk Time.debug.xcconfig"; sourceTree = "<group>"; };
 		348C5E03223C947700E88394 /* Talk Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Talk Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		348C5E06223C947700E88394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		348C5E08223C947700E88394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +33,6 @@
 		34B250CD2241E20600F29004 /* Talk Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Talk Time.entitlements"; sourceTree = "<group>"; };
 		34CEC5CC223F5EA100739456 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		34CEC5CE223F5F7F00739456 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		D39609B6B771DBD341D84DC7 /* Pods-Talk Time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk Time.release.xcconfig"; path = "Target Support Files/Pods-Talk Time/Pods-Talk Time.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6655D0F08812FE2C1E12DFA1 /* Pods_Talk_Time.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,8 +49,6 @@
 		1EB31ECE1C2D68968D6CD7CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				343A64F2A8B99882B7A5FA03 /* Pods-Talk Time.debug.xcconfig */,
-				D39609B6B771DBD341D84DC7 /* Pods-Talk Time.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -66,7 +59,6 @@
 				348C5E05223C947700E88394 /* Talk Time */,
 				348C5E04223C947700E88394 /* Products */,
 				1EB31ECE1C2D68968D6CD7CD /* Pods */,
-				95F069B420FB833349A3720E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,14 +89,6 @@
 			path = "Talk Time";
 			sourceTree = "<group>";
 		};
-		95F069B420FB833349A3720E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3267AF9813EABC132F80BA23 /* Pods_Talk_Time.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,11 +96,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 348C5E15223C947800E88394 /* Build configuration list for PBXNativeTarget "Talk Time" */;
 			buildPhases = (
-				89DA878B4CB2586225035EEC /* [CP] Check Pods Manifest.lock */,
 				348C5DFF223C947700E88394 /* Sources */,
 				348C5E00223C947700E88394 /* Frameworks */,
 				348C5E01223C947700E88394 /* Resources */,
-				76B9AF2AF1A2EAF700C6A1B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,61 +160,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		76B9AF2AF1A2EAF700C6A1B9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talk Time/Pods-Talk Time-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MongoSwift/MongoSwift.framework",
-				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/bson.framework",
-				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/bson.framework.dSYM",
-				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/mongoc.framework",
-				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/mongoc.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MongoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bson.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/bson.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mongoc.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/mongoc.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talk Time/Pods-Talk Time-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		89DA878B4CB2586225035EEC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Talk Time-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		348C5DFF223C947700E88394 /* Sources */ = {
@@ -388,7 +315,6 @@
 		};
 		348C5E16223C947800E88394 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 343A64F2A8B99882B7A5FA03 /* Pods-Talk Time.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Talk Time/Talk Time.entitlements";
@@ -409,7 +335,6 @@
 		};
 		348C5E17223C947800E88394 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D39609B6B771DBD341D84DC7 /* Pods-Talk Time.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Talk Time/Talk Time.entitlements";
