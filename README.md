@@ -1,3 +1,3 @@
 # Talk Time
 
-A description of this package.
+The source project for Talk Time
